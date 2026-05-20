@@ -1,0 +1,116 @@
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-background-color: #f4f4f4;
+}
+
+.sidebar {
+    -fx-background-color: #4a148c; 
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #e1bee7;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 15 20 15 20;
+    -fx-cursor: hand;
+    -fx-transition: 0.3s;
+}
+
+.nav-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-text-fill: white;
+}
+
+.nav-button-active {
+    -fx-background-color: #8e44ad; 
+    -fx-text-fill: white;
+    -fx-background-radius: 25 0 0 25;
+    -fx-font-weight: bold;
+}
+
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 15, 0, 0, 5);
+}
+
+.modern-table {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 8;
+}
+
+.modern-table .column-header, 
+.modern-table .column-header-background {
+    -fx-background-color: #8e44ad;
+    -fx-size: 45px;
+}
+
+.modern-table .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.modern-table .table-row-cell {
+    -fx-cell-size: 45px;
+    -fx-border-color: transparent #f0f0f0 transparent #f0f0f0;
+}
+
+.modern-table .table-row-cell:odd {
+    -fx-background-color: #fbf6ff;
+}
+
+.modern-table .table-row-cell:selected {
+    -fx-background-color: #e1bee7;
+    -fx-text-fill: #4a148c;
+}
+
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #d1d1d1;
+    -fx-border-radius: 5;
+    -fx-padding: 8;
+}
+
+.text-field:focused {
+    -fx-border-color: #8e44ad;
+    -fx-border-width: 1.5;
+    -fx-background-insets: 0;
+}
+
+.button-save {
+    -fx-background-color: #8e44ad;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 10 25;
+    -fx-cursor: hand;
+}
+
+.button-save:hover {
+    -fx-background-color: #7d3c98;
+}
+
+.button-clear {
+    -fx-background-color: white;
+    -fx-text-fill: #e67e22;
+    -fx-border-color: #e67e22;
+    -fx-border-radius: 8;
+    -fx-padding: 10 25;
+    -fx-cursor: hand;
+}
+
+.button-clear:hover {
+    -fx-background-color: #fdf2e9;
+}
+
+.camera-view {
+    -fx-background-color: #000000;
+    -fx-background-radius: 15;
+    -fx-border-color: #8e44ad;
+    -fx-border-width: 4;
+    -fx-border-radius: 15;
+}

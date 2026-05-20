@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="20.0" styleClass="root" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.attendance.controller.ProfilesController">
+    <padding>
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+    </padding>
+    
+    <children>
+        <HBox alignment="CENTER_LEFT" spacing="15.0">
+            <children>
+                <VBox>
+                    <children>
+                        <Label text="Student Profiles" textFill="#2C3E50">
+                            <font>
+                                <Font name="System Bold" size="26.0" />
+                            </font>
+                        </Label>
+                        <Label text="Register and manage student records for AI training" textFill="#7F8C8D" />
+                    </children>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #27ae60; -fx-text-fill: white;" styleClass="button-save" text="📥 Export CSV" />
+            </children>
+        </HBox>
+
+        <HBox alignment="CENTER_LEFT" spacing="15" styleClass="card" style="-fx-padding: 10 15;">
+            <children>
+                <TextField fx:id="searchProfile" prefHeight="40.0" HBox.hgrow="ALWAYS" promptText="🔍 Search profiles by ID, Name or Department..." />
+            </children>
+        </HBox>
+
+        <TableView fx:id="profileTable" styleClass="modern-table" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colStudentId" prefWidth="100" text="Student ID" /> 
+                <TableColumn fx:id="colFullName" prefWidth="180" text="Full Name" />
+                <TableColumn fx:id="colEmail" prefWidth="180" text="Email Address" />
+                <TableColumn fx:id="colDept" prefWidth="120" text="Department" />
+                <TableColumn fx:id="colRole" prefWidth="100" text="Role" />
+                <TableColumn fx:id="colPhone" prefWidth="130" text="Phone" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+
+        <HBox spacing="20.0">
+            <children>
+                <VBox spacing="15.0" styleClass="card" style="-fx-padding: 25;" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Add New Student Record" textFill="#4a148c">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <GridPane hgap="20" vgap="15">
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="33.3" />
+                                <ColumnConstraints percentWidth="33.3" />
+                                <ColumnConstraints percentWidth="33.4" />
+                            </columnConstraints>
+                            <children>
+                                <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                    <Label text="Student ID" textFill="#34495e" />
+                                    <TextField fx:id="pfStudentId" prefHeight="35.0" promptText="e.g. 2026101" />
+                                </VBox>
+                                <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                    <Label text="Full Name" textFill="#34495e" />
+                                    <TextField fx:id="pfFullName" prefHeight="35.0" promptText="Enter full name" />
+                                </VBox>
+                                <VBox spacing="5" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                                    <Label text="Email" textFill="#34495e" />
+                                    <TextField fx:id="pfEmail" prefHeight="35.0" promptText="name@university.edu" />
+                                </VBox>
+                                <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                    <Label text="Department" textFill="#34495e" />
+                                    <TextField fx:id="pfDept" prefHeight="35.0" promptText="e.g. CSE" />
+                                </VBox>
+                                <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <Label text="Role" textFill="#34495e" />
+                                    <ComboBox fx:id="pfRole" maxWidth="Infinity" prefHeight="35.0" promptText="-- Select Role --" />
+                                </VBox>
+                                <VBox spacing="5" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                    <Label text="Phone" textFill="#34495e" />
+                                    <TextField fx:id="pfPhone" prefHeight="35.0" promptText="01XXXXXXXXX" />
+                                </VBox>
+                            </children>
+                        </GridPane>
+                        <HBox alignment="CENTER_RIGHT" spacing="15">
+                            <padding><Insets top="10" /></padding>
+                            <children>
+                                <Button onAction="#onClearProfile" prefHeight="38.0" prefWidth="100.0" styleClass="button-clear" text="Clear" />
+                                <Button onAction="#onSaveProfile" prefHeight="38.0" prefWidth="140.0" styleClass="button-save" text="Save Profile" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <VBox alignment="CENTER" prefWidth="240.0" spacing="15" styleClass="card" style="-fx-padding: 20;">
+                    <children>
+                        <Label text="Face Data Preview" textFill="#4a148c" style="-fx-font-weight: bold;" />
+                        <StackPane style="-fx-background-color: #f8f9fa; -fx-background-radius: 10; -fx-border-color: #ddd; -fx-border-radius: 10; -fx-border-style: dashed;">
+                            <children>
+                                <ImageView fx:id="imgProfilePreview" fitHeight="160.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" />
+                            </children>
+                            <padding><Insets bottom="10" left="10" right="10" top="10" /></padding>
+                        </StackPane>
+                        <Label text="Registered Face" textFill="#95A5A6">
+                            <font><Font size="11.0" /></font>
+                        </Label>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</VBox>

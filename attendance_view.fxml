@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="20.0" styleClass="root" stylesheets="@../css/Style.css" 
+      xmlns="http://javafx.com/javafx/17" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.attendance.controller.AttendanceController">
+    
+    <padding>
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+    </padding>
+
+    <children>
+        <HBox alignment="CENTER_LEFT" spacing="15.0">
+            <children>
+                <VBox>
+                    <children>
+                        <Label text="Live Face Scanner" textFill="#2C3E50">
+                            <font>
+                                <Font name="System Bold" size="26.0" />
+                            </font>
+                        </Label>
+                        <Label text="Real-time facial recognition attendance system" textFill="#7f8c8d" />
+                    </children>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" /> 
+                <Button fx:id="btnScanner" minWidth="140.0" onAction="#toggleScanner" 
+                        styleClass="button-save" text="Start Scanner" />
+            </children>
+        </HBox>
+
+        <HBox spacing="25.0" VBox.vgrow="ALWAYS">
+            <children>
+                <VBox alignment="TOP_CENTER" spacing="15.0">
+                    <children>
+                        <StackPane styleClass="card" minWidth="480.0" minHeight="360.0">
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                            <children>
+                                <ImageView fx:id="cameraView" fitHeight="340.0" fitWidth="460.0" 
+                                           pickOnBounds="true" preserveRatio="true" styleClass="camera-view" />
+                            </children>
+                        </StackPane>
+                        <Label fx:id="lblScannerStatus" text="Scanner is Offline" textFill="#e67e22">
+                            <font>
+                                <Font name="System Italic" size="15.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+
+                <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Today's Attendance Log" textFill="#4a148c">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <TableView fx:id="attendanceTable" styleClass="modern-table" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="colStudent" minWidth="150.0" text="Student Name" />
+                                <TableColumn fx:id="colDept" minWidth="80.0" text="Dept" />
+                                <TableColumn fx:id="colDate" minWidth="100.0" text="Date" />
+                                <TableColumn fx:id="colTime" minWidth="90.0" text="Time" />
+                                <TableColumn fx:id="colStatus" minWidth="80.0" text="Status" />
+                            </columns>
+                            <columnResizePolicy>
+                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                            </columnResizePolicy>
+                        </TableView>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</VBox>

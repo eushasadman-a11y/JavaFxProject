@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: transparent;" 
+    xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="com.attendance.controller.DashboardContentController">
+    <content>
+        <VBox spacing="25.0" style="-fx-background-color: #F4F4F4;">
+            <padding><Insets bottom="30.0" left="30.0" right="30.0" top="30.0" /></padding>
+            <children>
+                <HBox alignment="CENTER_LEFT">
+                    <children>
+                        <VBox spacing="5">
+                            <children>
+                                <Label text="Welcome back, Admin" textFill="#2C3E50">
+                                    <font><Font name="System Bold" size="26.0" /></font>
+                                </Label>
+                                <Label fx:id="lblDateTime" text="" textFill="#7F8C8D">
+                                    <font><Font size="14.0" /></font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <HBox spacing="25.0">
+                    <children>
+                        <VBox alignment="CENTER_LEFT" prefHeight="110.0" prefWidth="280.0" styleClass="card">
+                            <padding><Insets left="25.0" /></padding>
+                            <children>
+                                <Label text="Total Students" textFill="#95A5A6" />
+                                <Label fx:id="lblTotalStudents" text="0" textFill="#8E44AD">
+                                    <font><Font name="System Bold" size="32.0" /></font>
+                                </Label>
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER_LEFT" prefHeight="110.0" prefWidth="280.0" styleClass="card">
+                            <padding><Insets left="25.0" /></padding>
+                            <children>
+                                <Label text="Present Today" textFill="#95A5A6" />
+                                <Label fx:id="lblPresentToday" text="0" textFill="#27AE60">
+                                    <font><Font name="System Bold" size="32.0" /></font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <HBox spacing="25.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <VBox spacing="10.0" styleClass="card" style="-fx-padding: 15;" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label style="-fx-font-weight: bold; -fx-font-size: 15;" text="Registered Students" textFill="#4a148c" />
+                                <TableView fx:id="studentTable" styleClass="modern-table" VBox.vgrow="ALWAYS">
+                                    <columns>
+                                        <TableColumn fx:id="colId" prefWidth="60.0" text="ID" />
+                                        <TableColumn fx:id="colName" prefWidth="200.0" text="Student Name" />
+                                    </columns>
+                                    <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY" /></columnResizePolicy>
+                                </TableView>
+                            </children>
+                        </VBox>
+                        <VBox spacing="10.0" styleClass="card" style="-fx-padding: 15;" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label style="-fx-font-weight: bold; -fx-font-size: 15;" text="Recent Attendance" textFill="#4a148c" />
+                                <TableView fx:id="recentAttendanceTable" styleClass="modern-table" VBox.vgrow="ALWAYS">
+                                    <columns>
+                                        <TableColumn fx:id="colRecentName" prefWidth="180.0" text="Name" />
+                                        <TableColumn fx:id="colRecentTime" prefWidth="120.0" text="Time" />
+                                    </columns>
+                                    <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY" /></columnResizePolicy>
+                                </TableView>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </content>
+</ScrollPane>

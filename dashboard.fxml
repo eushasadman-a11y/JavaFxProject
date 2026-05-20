@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainContent" prefHeight="750.0" prefWidth="1100.0" styleClass="root" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.attendance.controller.DashboardController">
+
+    <left>
+        <VBox prefWidth="250.0" spacing="5" styleClass="sidebar" BorderPane.alignment="CENTER">
+            <children>
+                <VBox alignment="CENTER_LEFT" spacing="5" style="-fx-padding: 30 0 40 20;">
+                    <children>
+                        <Label text="AI ATTENDANCE" textFill="WHITE">
+                            <font><Font name="System Bold" size="22.0" /></font>
+                        </Label>
+                        <Label text="Management System" textFill="#e1bee7">
+                            <font><Font size="12.0" /></font>
+                        </Label>
+                    </children>
+                </VBox>
+                
+                <Button alignment="BASELINE_LEFT" maxWidth="Infinity" onAction="#showDashboardContent" styleClass="nav-button" text="📊   Dashboard" />
+                <Button alignment="BASELINE_LEFT" maxWidth="Infinity" onAction="#onOpenCamera" styleClass="nav-button" text="📷   Camera Feed" />
+                <Button alignment="BASELINE_LEFT" maxWidth="Infinity" onAction="#showAttendance" styleClass="nav-button" text="✅   Attendance" />
+                <Button alignment="BASELINE_LEFT" maxWidth="Infinity" onAction="#showProfiles" styleClass="nav-button" text="👤   Profiles" />
+                <Button alignment="BASELINE_LEFT" maxWidth="Infinity" onAction="#showDepartments" styleClass="nav-button" text="🏢   Departments" />
+                
+                <Region VBox.vgrow="ALWAYS" />
+                <Label style="-fx-padding: 0 0 20 20;" text="v1.0.2" textFill="#b39ddb" />
+            </children>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane fx:id="centerPane" />
+    </center>
+</BorderPane>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="500.0" prefWidth="700.0" styleClass="root" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.attendance.controller.LoginController">
+   <children>
+      <VBox alignment="CENTER" maxWidth="400.0" maxHeight="450.0" spacing="25.0" styleClass="card" style="-fx-padding: 40;">
+         <children>
+            <VBox alignment="CENTER" spacing="5.0">
+               <children>
+                  <Label text="AI ATTENDANCE" textFill="#4a148c">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label text="Please login to your account" textFill="#7f8c8d">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+
+            <VBox spacing="15.0">
+               <children>
+                  <VBox spacing="5.0">
+                     <children>
+                        <Label text="Username" textFill="#34495e" />
+                        <TextField fx:id="usernameField" prefHeight="40.0" promptText="Enter your username" />
+                     </children>
+                  </VBox>
+                  <VBox spacing="5.0">
+                     <children>
+                        <Label text="Password" textFill="#34495e" />
+                        <PasswordField fx:id="passwordField" prefHeight="40.0" promptText="Enter your password" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+
+            <VBox alignment="CENTER" spacing="15.0">
+               <children>
+                  <Button fx:id="btnLogin" maxWidth="Infinity" onAction="#handleLogin" prefHeight="45.0" styleClass="button-save" text="Login to System" />
+                  <Label fx:id="errorLabel" text="" textFill="#e74c3c">
+                     <font>
+                        <Font name="System Italic" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+         <StackPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </StackPane.margin>
+      </VBox>
+   </children>
+</StackPane>

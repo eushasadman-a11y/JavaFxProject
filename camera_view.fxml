@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane styleClass="root" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.attendance.controller.CameraController">
+    
+    <top>
+        <VBox alignment="CENTER" spacing="5">
+            <padding>
+                <Insets top="20" bottom="10"/>
+            </padding>
+            <children>
+                <Label text="AI Face Recognition and Training Center" textFill="#4a148c">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <Label text="Ensure good lighting for better face detection" textFill="#7f8c8d" />
+            </children>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="25">
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="10.0" />
+            </padding>
+            <children>
+                <StackPane styleClass="card">
+                    <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                    </padding>
+                    <children>
+                        <VBox alignment="CENTER" styleClass="camera-view" style="-fx-background-color: black;">
+                            <children>
+                                <ImageView fx:id="cameraView" fitHeight="500.0" fitWidth="800.0" preserveRatio="true" />
+                            </children>
+                        </VBox>
+                    </children>
+                </StackPane>
+                
+                <HBox alignment="CENTER" spacing="20">
+                    <children>
+                        <Button fx:id="btnStart" onAction="#onStart" prefWidth="160" style="-fx-background-color: #27AE60; -fx-text-fill: white;" styleClass="button-save" text="▶ Start Camera" />
+                        <Button fx:id="btnStop" onAction="#onStop" prefWidth="160" style="-fx-background-color: #E74C3C; -fx-text-fill: white;" styleClass="button-save" text="⏹ Stop Camera" />
+                        
+                        <Separator orientation="VERTICAL" prefHeight="40" />
+                        
+                        <Button fx:id="btnTrain" onAction="#onTrain" prefWidth="160" styleClass="button-save" text="⚙ Train Models" />
+                        <Button fx:id="btnBack" onAction="#onBack" prefWidth="160" styleClass="button-clear" text="⬅ Dashboard" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+    
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" style="-fx-background-color: #eee; -fx-padding: 10;">
+            <children>
+                <Label fx:id="lblStatus" text="System Ready" textFill="#2c3e50">
+                    <font>
+                        <Font name="System Italic" size="12.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
